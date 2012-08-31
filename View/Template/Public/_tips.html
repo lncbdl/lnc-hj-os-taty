@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> 
+
+<title>成功页</title>
+
+<link rel="stylesheet" type="text/css" href="../css/login.css"  />
+
+<script type="text/javascript" src="{$smarty.const.IMG_SERVER}__PUBLIC__/js/jquery-1.5.2_mini.js"></script>
+<script type="text/javascript" src="{$smarty.const.IMG_SERVER}__PUBLIC__/js/tips.js"></script>
+
+{literal}
+<style >
+	.success_main{width:220px; margin:0 auto; background:url({/literal}{$smarty.const.IMG_SERVER}{literal}__PUBLIC__/images/tips_success.gif) 0 0 no-repeat; height:205px; margin-top:150px; padding:100px 300px;}
+	.success_main h4{font:bold 14px "宋体"; color:#FF0000; margin-bottom:10px;}
+</style>
+{/literal}
+
+</head>
+
+<body>
+ <div class="success_main">
+   <h4>{$msg}<a id="back_url_a" href="javascript:;">点击这里跳转!</a></h4>
+   <p>页面将在<span id="showtime"></span>秒后自动跳转!</p>
+ </div>
+ <input type="hidden" id="backurl" value="{$backurl}"/>
+ <input type="hidden" id="timeout" value="{$timeout}"/>
+</body>
+</html>

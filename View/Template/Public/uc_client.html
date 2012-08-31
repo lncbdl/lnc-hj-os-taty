@@ -1,0 +1,30 @@
+<script type="text/javascript" src="{$smarty.const.IMG_SERVER}__PUBLIC__/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="{$smarty.const.IMG_SERVER}__PUBLIC__/js/plugins/jquery.cookie.js"></script>
+<script>
+
+	var uc_get_cookie_url = "{$uc_get_cookie_url}";
+	var uc_login_url = "{$uc_login_url}";
+	var domain = "{$domain}";
+	var cookie_name = "{$cookie_name}";
+	$(document).ready(function(){    
+	    $.ajax({
+	        url: uc_get_cookie_url,
+	        dataType: 'jsonp',
+	        jsonp: 'callback',
+	        jsonpCallback: 'jsonpCallback',
+	        success: function(){
+	           
+	        }
+	    });
+	});
+	function jsonpCallback(json){
+		var isLogined = json.login;
+		if (isLogined) {
+	    	$.cookie(cookie_name, json.data, {domain:domain});
+	    	window.location.reload();
+	    } else {
+	    	window.location.href = uc_login_url;
+	    }
+	}
+
+</script>
